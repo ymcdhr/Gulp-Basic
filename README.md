@@ -49,7 +49,6 @@ npm install gulp-babel babel-core babel-preset-es2015 --save-dev
 在gulpfile.js中加入以下代码：
  ```javascript
 //将ES6编译成ES5：
-
 gulp.task("es6Toes5", function () {
     gulp.src("./src/script/**/*.js")
         .pipe(babel({
@@ -62,13 +61,11 @@ gulp.task("es6Toes5", function () {
 # 三、拷贝文件
  ```javascript
 //拷贝HTML
-
 gulp.task('html', function() {
     gulp.src('src/*.html')
         .pipe(gulp.dest('./dist'));
 });
 //拷贝Image
-
 gulp.task('image', function() {
     gulp.src('src/style/images/**')
         .pipe(gulp.dest('./dist/style/images'));
@@ -78,7 +75,6 @@ gulp.task('image', function() {
 # 四、监控改变，监控文件的改变，执行对应的任务：
  ```javascript
 //定义监控任务
-
 gulp.task('watchTask', function () {
     gulp.watch('./src/**/*.png', ['image']);
     gulp.watch('./src/**/*.jpg', ['image']);
