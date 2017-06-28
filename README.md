@@ -2,7 +2,7 @@
 Gulp的基本使用：包括监听，ES6编译，合并压缩等
 
 
-一、安装gulp
+# 一、安装gulp
 
 1.先在全局安装gulp
 $ npm install --global gulp
@@ -21,7 +21,7 @@ $ npm install --save-dev gulp
 更多插件使用方法参见：http://www.ydcss.com/archives/tag/gulp
 
 
-二、将ES6编译成ES5
+# 二、将ES6编译成ES5
 
 将ES6编译成ES5：
 
@@ -47,7 +47,7 @@ npm install gulp-babel babel-core babel-preset-es2015 --save-dev
 
 
 在gulpfile.js中加入以下代码：
-
+ ```javascript
 //将ES6编译成ES5：
 
 gulp.task("es6Toes5", function () {
@@ -57,10 +57,10 @@ gulp.task("es6Toes5", function () {
         }))
         .pipe(gulp.dest("./dist/script"));//编译生成路径
 });
+```
 
-
-三、拷贝文件
-
+# 三、拷贝文件
+ ```javascript
 //拷贝HTML
 
 gulp.task('html', function() {
@@ -73,10 +73,10 @@ gulp.task('image', function() {
     gulp.src('src/style/images/**')
         .pipe(gulp.dest('./dist/style/images'));
 });
+```
 
-
-四、监控改变，监控文件的改变，执行对应的任务：
-
+# 四、监控改变，监控文件的改变，执行对应的任务：
+ ```javascript
 //定义监控任务
 
 gulp.task('watchTask', function () {
@@ -86,14 +86,14 @@ gulp.task('watchTask', function () {
     gulp.watch('./src/**/*.html', ['html']);
     gulp.watch('./src/**/*.less', ['lessTask']); //当所有less文件发生改变时，调用testLess任务
 });
+```
 
-
-五、配置webstorm
+# 五、配置webstorm
 
 4、在webstorm上配置，参考：http://www.qdfuns.com/notes/19478/7ba7d3f212bee47a4fa0e9f2da253cfb.html
 
 
-六、合并/压缩JS/CSS/IMG文件
+# 六、合并/压缩JS/CSS/IMG文件
 
 5、合并/压缩JS/CSS/PNG：http://www.gowhich.com/blog/621
 
