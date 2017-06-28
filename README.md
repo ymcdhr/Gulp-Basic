@@ -1,6 +1,7 @@
 # Gulp-Basic
 Gulp的基本使用：包括监听，ES6编译，合并压缩等
 
+
 一、安装gulp
 
 1.先在全局安装gulp
@@ -34,10 +35,15 @@ http://www.open-open.com/lib/view/open1454226995448.html
 
 
 安装以下三个包到项目目录：
+
 npm install gulp-babel --save-dev
+
 npm install babel-core --save-dev
+
 npm install babel-preset-es2015 --save-dev
+
 npm install gulp-babel babel-core babel-preset-es2015 --save-dev
+
 
 
 在gulpfile.js中加入以下代码：
@@ -51,6 +57,7 @@ gulp.task("es6Toes5", function () {
         }))
         .pipe(gulp.dest("./dist/script"));//编译生成路径
 });
+
 
 三、拷贝文件
 
@@ -67,6 +74,7 @@ gulp.task('image', function() {
         .pipe(gulp.dest('./dist/style/images'));
 });
 
+
 四、监控改变，监控文件的改变，执行对应的任务：
 
 //定义监控任务
@@ -79,9 +87,11 @@ gulp.task('watchTask', function () {
     gulp.watch('./src/**/*.less', ['lessTask']); //当所有less文件发生改变时，调用testLess任务
 });
 
+
 五、配置webstorm
 
 4、在webstorm上配置，参考：http://www.qdfuns.com/notes/19478/7ba7d3f212bee47a4fa0e9f2da253cfb.html
+
 
 六、合并/压缩JS/CSS/IMG文件
 
